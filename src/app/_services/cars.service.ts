@@ -8,11 +8,11 @@ const API_URL = 'https://administration-movies.herokuapp.com/api/';
 @Injectable({
   providedIn: 'root'
 })
-export class CarsService {
+export class MoviesService {
   constructor(private http: HttpClient) { }
 
   findAll(): Observable<any> {
-    return this.http.get(API_URL + 'cars');
+    return this.http.get(API_URL + 'movies');
   }
 
 }

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HelloService } from '../_services/hello.service';
-import { CarsService } from '../_services/cars.service';
+import { MoviesService } from '../_services/movies.service';
 
 @Component({
   selector: 'app-home',
@@ -9,10 +9,10 @@ import { CarsService } from '../_services/cars.service';
 })
 export class HomeComponent implements OnInit {
   hello?: string;
-  cars?: any[];
+  movies?: any[];
   message?: any;
 
-  constructor(private helloService: HelloService, private carsService: CarsService) { }
+  constructor(private helloService: HelloService, private moviesService: MoviesService) { }
 
   ngOnInit(): void {
     // test hello world controller
@@ -25,13 +25,13 @@ export class HomeComponent implements OnInit {
       }
     );
 
-    // test car controller
-    this.carsService.findAll().subscribe(
+    // test movie controller
+    this.moviesService.findAll().subscribe(
       data => {
-        this.cars = data;
+        this.movies = data;
       },
       err => {
-        this.cars = [];
+        this.movies = [];
         this.message = err.message;
       }
     );
