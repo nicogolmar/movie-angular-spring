@@ -12,7 +12,7 @@ export class MoviesService {
   constructor(private http: HttpClient) { }
 
   findAll(): Observable<any> {
-    return this.http.get(API_URL + 'movies');
+    return this.http.get(API_URL + 'home');
   }
 
 }
